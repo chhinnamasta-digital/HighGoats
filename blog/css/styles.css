@@ -1,0 +1,104 @@
+.blogLoginWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #242424;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blogLoginWrap .contact_form {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+  padding: 4rem 0;
+  position: relative;
+}
+.blogLoginWrap .contact_form form input, .blogLoginWrap .contact_form form textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #03A804;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: capitalize;
+  color: #c1c1c1;
+  border-radius: 0px;
+}
+.blogLoginWrap .contact_form form input:focus, .blogLoginWrap .contact_form form textarea:focus {
+  background-color: transparent;
+  box-shadow: none;
+}
+.blogLoginWrap .contact_form form .submit_btn {
+  background: #818181;
+  border-radius: 42.647px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  padding: 10px 58px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  margin-top: 50px;
+}
+
+.errorMess {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 1px 1px 25px #03a804;
+}
+.errorMess p {
+  color: #fff;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.blogHome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c1c1c1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blogHome .blogPostForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blogHome .blogPostForm form {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.blogHome .blogPostForm form select, .blogHome .blogPostForm form input, .blogHome .blogPostForm form textarea {
+  min-height: 40px;
+  font-size: 16px;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.blogHome .blogPostForm form button {
+  position: relative;
+  background: #242424;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  padding: 5px 12px;
+}
+
+/*# sourceMappingURL=styles.css.map */

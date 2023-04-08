@@ -1,0 +1,137 @@
+.roadMapSection{
+    position: relative;
+    // display: none;
+}
+.roadMapOnLoad{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    background-color: $colorBlack;
+    z-index: 10000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .roadMapTypography{
+        font-style: normal;
+        font-weight: 600;
+        h2{
+            font-size: 64px;
+            line-height: 79px;
+            text-align: center; 
+            margin-bottom: 0;
+        }
+        h3{
+            font-size: 64px;
+            line-height: 79px;            
+            color: #D9D9D9;
+        }
+        h4{
+            font-size: 87.1965px;
+            line-height: 107px;
+            text-align: center;
+            text-transform: uppercase;            
+            color: #03A804;
+            margin-top: 25px;
+            opacity: 0;
+            transition: all linear 0.5s;
+        }
+        
+    }
+}
+.scaleParaGraph{    
+    position: absolute;
+    top: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+}
+.paragraphScale{  
+    width: 100%;    
+    position: absolute;
+    top: 50%;
+    display: none;
+    z-index: 99999;
+    transition: all linear 0.5s;
+    min-height: 30%;
+    background: linear-gradient(180deg, #000000 34%, rgba(0, 0, 0, 0) 74%);
+    padding: 40px 0 60px;
+    p{        
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 48px;
+        text-align: center;
+        color: #D9D9D9;
+        width: 75%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+// Road Map Version 1.2
+.roadMapMain{
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 999;
+    .roadMapBg{
+        background: url("../images/road.png") no-repeat top center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        z-index: 998;
+    }
+    .mapMarkScroll{
+        border: 1px solid red;
+        position: absolute;        
+        top: 50%;
+        width: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 80%;
+        overflow-y: scroll;
+        ul{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            flex-flow: column;
+            border: 1px solid blue;
+            li{
+                // display: none;
+                transition: all linear 0.5s;
+                height: 200px;
+                padding: 1rem 0;
+                // display: flex;
+                flex-flow: column;
+                justify-content: center;
+                // &:first-child{
+                //     display: flex;
+                // }
+                h2{
+                    margin: 0;
+                    cursor: pointer;
+                }
+            }
+        }
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+}

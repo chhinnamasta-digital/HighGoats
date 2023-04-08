@@ -1,0 +1,1045 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@font-face {
+  font-family: lightFont;
+  src: url(../fonts/ClashDisplay-Light.otf);
+}
+@font-face {
+  font-family: regularFont;
+  src: url(../fonts/ClashDisplay-Regular.otf);
+}
+@font-face {
+  font-family: mediumFont;
+  src: url(../fonts/ClashDisplay-Medium.otf);
+}
+body {
+  border: none;
+  background: #000;
+  font-family: mediumFont;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 79px;
+  color: #D9D9D9;
+  margin-bottom: 20px;
+}
+h2 span {
+  color: #03A804;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  h2 {
+    font-size: 45px;
+    line-height: 50px;
+  }
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3vw;
+  line-height: 48px;
+  color: #D9D9D9;
+  margin: 20px 0;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  p {
+    font-size: 25px;
+  }
+}
+
+#menuPosition {
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.menuNav {
+  position: relative;
+  z-index: 10000;
+  margin-top: 100px;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .menuNav {
+    margin-top: 20px;
+  }
+}
+.menuNav img {
+  transition: all linear 0.5s;
+}
+.menuNav .opacityClass {
+  opacity: 0;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .menuNav .opacityClass {
+    opacity: 1;
+  }
+}
+.menuNav #iconBar {
+  transition: all linear 0.5s;
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+.menuNav #iconBar > a {
+  position: relative;
+  padding-bottom: 20px;
+  width: fit-content;
+  margin: 0 0 0 auto;
+  min-width: 100px;
+}
+
+.menuItems {
+  display: none;
+  background: #000;
+  background-size: 435px 680px;
+  background-position: 70% 50%;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  padding-top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow-y: auto;
+}
+.menuItems .row {
+  align-items: center;
+}
+.menuItems .itemLinks {
+  position: relative;
+  text-transform: uppercase;
+  list-style: none;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .menuItems .itemLinks {
+    padding: 0.7rem 0;
+  }
+}
+.menuItems .itemLinks a {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 80px;
+  text-shadow: 1px 1px 0 #03A804, 0px 0px 0 #03A804, 0px -1px 0 #03A804, 0px 0px 0 #03A804, 0px 0px 0 #03A804;
+  text-decoration: none;
+  transition: all linear 0.7s;
+  color: #000;
+  position: relative;
+}
+.menuItems .itemLinks a::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #03A804;
+  width: 0%;
+  transition: all linear 0.2s;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .menuItems .itemLinks a {
+    font-size: 35px;
+    line-height: 42px;
+  }
+}
+.menuItems .itemLinks:hover a {
+  text-shadow: none;
+}
+.menuItems .itemLinks:hover a::before {
+  width: 100%;
+}
+.menuItems .itemLinks.active a {
+  color: #03A804;
+}
+
+.iconRotate {
+  transform: rotate(-45deg);
+}
+
+#video_1, #video_2 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+#ourFuture_video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  #ourFuture_video {
+    display: none;
+  }
+}
+
+#ourPast_video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.HomeWrap {
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .HomeWrap {
+    margin-top: 100px;
+  }
+}
+
+.login {
+  position: absolute;
+  height: 100%;
+}
+
+.signatureImg {
+  z-index: 100;
+}
+.signatureImg img {
+  max-width: 500px;
+  position: relative;
+  top: 60px;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .signatureImg img {
+    max-width: 100%;
+    top: 0;
+  }
+}
+
+.signatureText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  transform: translateY(-50%);
+  opacity: 0;
+  color: #fff;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .signatureText {
+    position: relative;
+    opacity: 1;
+    top: 0%;
+    left: 0%;
+    z-index: 99;
+    transform: translateY(0%);
+    margin-top: 85px;
+    order: 2;
+  }
+}
+.signatureText h1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 87.6992px;
+  line-height: 108px;
+  text-shadow: 1px 1px 0 #fff, 0px 0px 0 #fff, 0px -1px 0 #fff, 0px 0px 0 #fff, 0px 0px 0 #fff;
+  color: #000;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .signatureText h1 {
+    font-size: 45px;
+  }
+}
+.signatureText h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 79px;
+  color: #D9D9D9;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .signatureText h2 {
+    font-size: 40px;
+    line-height: 2rem;
+  }
+}
+.signatureText h3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 49px;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .signatureText h3 {
+    font-size: 30px;
+    line-height: 2rem;
+  }
+}
+
+.absolutePos {
+  position: absolute;
+}
+
+#homeBtn {
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: none;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  #homeBtn {
+    width: 100%;
+  }
+}
+#homeBtn a:last-child {
+  margin-left: 0px;
+}
+
+.buttonWrap {
+  display: flex;
+  width: fit-content;
+  border-radius: 60px;
+  font-family: "Poppins", sans-serif;
+}
+.buttonWrap a {
+  padding: 12px 52px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  text-decoration: none;
+  color: #03A804;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 1px;
+  border-radius: 60px;
+}
+.buttonWrap a::first-letter {
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .buttonWrap a {
+    padding: 7px 36px;
+  }
+}
+.buttonWrap a:last-child {
+  margin-left: 20px;
+}
+
+.transparentBg {
+  background-color: transparent;
+}
+
+.btnBg {
+  background-color: #03A804;
+  color: #000 !important;
+}
+.btnBg a {
+  color: #000;
+}
+
+.linkButton {
+  display: flex;
+}
+
+.buttonBorder {
+  opacity: 0.9;
+  border: 1px solid #03A804;
+}
+
+.signatureBtnBlock {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .signatureBtnBlock {
+    opacity: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45px;
+  }
+}
+
+.pastImgPos {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.heading_text {
+  width: 70%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .heading_text {
+    width: 100%;
+  }
+}
+
+.heading_img {
+  margin: 100px 0;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .heading_img {
+    display: none;
+  }
+}
+.heading_img img {
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all linear 0.5s;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .heading_img img {
+    max-width: 100%;
+  }
+}
+
+.cardWrap {
+  position: relative;
+  margin: 50px 0;
+  font-family: "Poppins", sans-serif;
+}
+.cardWrap > .row [class*=col-] {
+  display: flex;
+}
+.cardWrap .cardInnerOutlet {
+  box-sizing: border-box;
+  width: 100%;
+  border: 0.746629px solid #FFFFFF;
+  border-radius: 20.9056px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.cardWrap .cardInnerOutlet .cardFlex {
+  display: flex;
+  align-items: center;
+  padding: 65px;
+  flex-flow: column;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .cardWrap .cardInnerOutlet .cardFlex {
+    padding: 20px;
+  }
+}
+.cardWrap .cardInnerOutlet .cardFlex h4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  color: #D9D9D9;
+  width: 100%;
+}
+.cardWrap .cardInnerOutlet .cardFlex h4 span {
+  color: #03A804;
+}
+.cardWrap .cardInnerOutlet .cardFlex p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #818181;
+}
+.cardWrap .cardInnerOutlet .grid_token {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: end;
+  justify-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.cardWrap .cardInnerOutlet:hover {
+  background-color: #03A804 !important;
+}
+.cardWrap .cardInnerOutlet:hover h4 {
+  color: #000 !important;
+}
+.cardWrap .cardInnerOutlet:hover h4 span {
+  color: #000;
+}
+.cardWrap .cardInnerOutlet:hover p {
+  color: #000000 !important;
+}
+.cardWrap .cardInnerOutlet:hover img {
+  filter: brightness(0);
+}
+.cardWrap .active {
+  background-color: #03A804 !important;
+  width: 100%;
+  height: 100%;
+  border: none !important;
+}
+.cardWrap .active h4 {
+  color: #000 !important;
+}
+.cardWrap .active p {
+  color: #000000 !important;
+}
+
+.tokenPup_up {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 99;
+  background-color: #000;
+  font-family: "Poppins", sans-serif;
+}
+.tokenPup_up .close {
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  max-width: 25px;
+  cursor: pointer;
+}
+.tokenPup_up .token_data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background-color: #03A804;
+  padding: 40px 40px;
+}
+.tokenPup_up .token_data img {
+  filter: brightness(0) invert(1);
+}
+.tokenPup_up .token_data .cardFlex {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.tokenPup_up .token_data .cardFlex h4 {
+  font-weight: 400;
+  font-size: 2vw;
+  line-height: 48px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #D9D9D9;
+  margin: 20px 0;
+}
+.tokenPup_up .token_data .cardFlex p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3vw;
+  line-height: 48px;
+  text-align: center;
+  color: #000;
+}
+
+.contact_form {
+  margin: 180px 0;
+}
+.contact_form form input, .contact_form form textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #03A804;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: capitalize;
+  color: #D9D9D9;
+  border-radius: 0px;
+}
+.contact_form form input:focus, .contact_form form textarea:focus {
+  background-color: transparent;
+  box-shadow: none;
+}
+.contact_form form .submit_btn {
+  background: #818181;
+  border-radius: 42.647px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  padding: 10px 58px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  margin-top: 50px;
+}
+
+footer {
+  background: url("../images/footerwave.png") no-repeat bottom center;
+  width: 100%;
+  min-height: 100px;
+  background-size: cover;
+  margin-top: 200px;
+  font-family: "Poppins", sans-serif;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  footer {
+    margin-top: 0;
+  }
+}
+footer h4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #D9D9D9;
+  margin-bottom: 40px;
+}
+footer p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #D9D9D9;
+}
+footer .footerBlock {
+  min-height: 350px;
+}
+footer .footerBlock > ul {
+  list-style: none;
+  display: flex;
+}
+footer .footerBlock > ul > li {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  position: relative;
+  margin-left: 20px;
+}
+footer .footerBlock > ul > li > a {
+  text-decoration: none;
+  color: #D9D9D9;
+}
+
+.socialMedia ul {
+  list-style: none;
+  display: flex;
+}
+.socialMedia ul li {
+  width: 69px;
+  height: 69px;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  margin: 10px 7px;
+}
+
+.filterMainGrid {
+  font-family: "Poppins", sans-serif;
+  margin-top: 200px;
+}
+.filterMainGrid .contentIndex, .filterMainGrid .contentText {
+  padding: 0.5rem;
+}
+.filterMainGrid .contentIndex h4 {
+  color: #fff;
+  margin-bottom: 40px;
+}
+.filterMainGrid .contentIndex > ul {
+  display: grid;
+  list-style: none;
+  padding-left: 0;
+  grid-template-columns: auto;
+  grid-row-gap: 1rem;
+}
+.filterMainGrid .contentIndex > ul > li {
+  padding: 0.5rem 1rem;
+  font-size: 24px;
+  color: #818181;
+  cursor: pointer;
+  width: fit-content;
+}
+.filterMainGrid .contentIndex > ul > li.active {
+  background: #03A804;
+  border-radius: 42.647px;
+  color: #000;
+}
+.filterMainGrid .contentIndex > ul > li:hover {
+  background: #03A804;
+  border-radius: 42.647px;
+  color: #000;
+}
+.filterMainGrid .contenttext ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
+  font-size: 22px;
+}
+.filterMainGrid .contenttext ul li {
+  background: rgba(3, 168, 4, 0.41);
+  box-shadow: 0px 4px 4px rgba(49, 24, 24, 0.25);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
+.filterMainGrid .contenttext ul li p {
+  font-size: 22px;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .filterMainGrid .contenttext ul li {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roadMapWrapper {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.roadMapWrapper .roadMapBox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: flex;
+  background: url(../images/road.png) no-repeat top center;
+  background-size: contain;
+}
+.roadMapWrapper .roadMapBox .typography {
+  width: fit-content;
+  border: 0px solid #fff;
+}
+.roadMapWrapper .roadMapBox .typography h2 strong {
+  margin-left: 100px;
+}
+.roadMapWrapper .roadMapBox .road {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  border: 0px solid #ff0000;
+}
+.roadMapWrapper .roadMapBox .road::-webkit-scrollbar {
+  display: none;
+}
+.roadMapWrapper .roadMapBox .road::-webkit-scrollbar {
+  display: none;
+}
+.roadMapWrapper .roadMapBox .road::-webkit-scrollbar {
+  display: none;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone {
+  border: 0px solid red;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  left: 0;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul li {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul li:last-child {
+  margin-bottom: 100px;
+  align-items: center;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul li .imgBlock {
+  cursor: pointer;
+  background: url("../images/mapmark.png") no-repeat top center;
+  height: 75px;
+  width: 75px;
+  background-size: contain;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul li .messageBox {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2%;
+  width: 45%;
+  background: #D9D9D9;
+  border-radius: 23px;
+  text-align: center;
+  padding: 30px;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul li .messageBox h4 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  text-transform: capitalize;
+  color: #494949;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul li .messageBox p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  color: #494949;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul li .messageBox .closeBox {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul li .messageBox .messageBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 9.53202px 34.9507px;
+  gap: 6.35px;
+  position: relative;
+  background: #000000;
+  border-radius: 38.1281px;
+  margin: 0 0 0 auto;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul li .messageBox .messageBtn span {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15.2512px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  color: #D9D9D9;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.roadMapWrapper .roadMapBox .road .roadMileStone ul .active .messageBox {
+  display: block;
+}
+
+.animateText {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .animateText {
+    display: none;
+  }
+}
+.animateText .animateHeading {
+  position: absolute;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+.animateText .animateHeading.active {
+  opacity: 1 !important;
+}
+.animateText .animateHeading .active h2 {
+  z-index: 999 !important;
+}
+
+.signUp {
+  display: none;
+  position: absolute;
+  bottom: -40px;
+  z-index: 1000;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.signUp .contact_form {
+  margin: 0;
+}
+.signUp .contact_form .submit_btn {
+  font-size: 18px;
+  line-height: inherit;
+  padding: 10px 53px;
+  margin: 0;
+  background-color: #03A804;
+}
+
+.boxShadow {
+  box-shadow: 2px 2px 5px #03A804, -2px -2px 5px #03A804;
+}
+
+.roadMapSection {
+  position: relative;
+}
+
+.roadMapOnLoad {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  background-color: #000;
+  z-index: 10000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.roadMapOnLoad .roadMapTypography {
+  font-style: normal;
+  font-weight: 600;
+}
+.roadMapOnLoad .roadMapTypography h2 {
+  font-size: 64px;
+  line-height: 79px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.roadMapOnLoad .roadMapTypography h3 {
+  font-size: 64px;
+  line-height: 79px;
+  color: #D9D9D9;
+}
+.roadMapOnLoad .roadMapTypography h4 {
+  font-size: 87.1965px;
+  line-height: 107px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #03A804;
+  margin-top: 25px;
+  opacity: 0;
+  transition: all linear 0.5s;
+}
+
+.scaleParaGraph {
+  position: absolute;
+  top: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+.paragraphScale {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  display: none;
+  z-index: 99999;
+  transition: all linear 0.5s;
+  min-height: 30%;
+  background: linear-gradient(180deg, #000000 34%, rgba(0, 0, 0, 0) 74%);
+  padding: 40px 0 60px;
+}
+.paragraphScale p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  text-align: center;
+  color: #D9D9D9;
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+}
+
+.roadMapMain {
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 999;
+}
+.roadMapMain .roadMapBg {
+  background: url("../images/road.png") no-repeat top center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  z-index: 998;
+}
+.roadMapMain .mapMarkScroll {
+  border: 1px solid red;
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  overflow-y: scroll;
+}
+.roadMapMain .mapMarkScroll ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex-flow: column;
+  border: 1px solid blue;
+}
+.roadMapMain .mapMarkScroll ul li {
+  transition: all linear 0.5s;
+  height: 200px;
+  padding: 1rem 0;
+  flex-flow: column;
+  justify-content: center;
+}
+.roadMapMain .mapMarkScroll ul li h2 {
+  margin: 0;
+  cursor: pointer;
+}
+.roadMapMain .mapMarkScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
