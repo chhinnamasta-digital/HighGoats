@@ -95,43 +95,103 @@
     .mapMarkScroll{
         border: 1px solid red;
         position: absolute;        
-        top: 50%;
+        top: 0;
         width: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        height: 80%;
-        overflow-y: scroll;
+        transform: translateX(-50%);
+        height: 100%;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        // overflow-y: scroll;
         ul{
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 0;
             width: 100%;
             margin: 0;
             padding: 0;
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
             flex-flow: column;
             border: 1px solid blue;
+            transform: translateY(-50%);
+            height: 95%;
+            overflow: hidden;
+            overflow-y: auto;
+            &::-webkit-scrollbar{
+                display: none;
+            }
             li{
-                // display: none;
                 transition: all linear 0.5s;
-                height: 200px;
-                padding: 1rem 0;
-                // display: flex;
+                // padding: 1rem 0;
+                display: flex;
                 flex-flow: column;
-                justify-content: center;
-                // &:first-child{
-                //     display: flex;
-                // }
-                h2{
-                    margin: 0;
-                    cursor: pointer;
+                justify-content: flex-end;
+                position: relative;
+                margin: 50% 0;
+                &:first-child{
+                    // top: 100px;
                 }
+                h2{
+                    margin: 0 auto;
+                    cursor: pointer;
+                    transition: all linear 0.5s;  
+                    transform: scale(0.5); 
+                    cursor: not-allowed;
+                    width: fit-content;
+                }
+                 
+                &.active{
+                    h2{
+                        color:green; 
+                        transform: scale(1.2) ;
+                        cursor:pointer;
+                        cursor: pointer;
+                    }
+                }             
             }
         }
         &::-webkit-scrollbar{
             display: none;
         }
+        
+        .messageBox{
+            padding: 1rem;
+            background: #018040;
+            border-radius: 23px;            
+            position: absolute;
+            bottom: 30%;
+            right: -50%;
+            width: 500px;
+            min-height: 300px;
+            transform: rotateY(-30deg);
+            z-index: 99;
+            h4{
+                font-weight: 600;
+                font-size: 32px;
+                line-height: 48px;
+                display: flex;
+                align-items: center;
+                text-transform: capitalize;
+                color: #FFFFFF;
+            }
+            p{
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 36px;
+                display: flex;
+                align-items: center;
+                text-transform: capitalize;                        
+                color: #FFFFFF;
+            }
+            &::after{
+                content: '';
+                position: absolute;                
+                width: 30px;
+                height: 100%;
+                background: #D9D9D9;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: -1;
+            }
+        }   
     }
 }

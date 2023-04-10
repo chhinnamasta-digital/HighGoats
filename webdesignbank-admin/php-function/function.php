@@ -265,7 +265,7 @@ class functions extends connection
 		{
 			$url="http";
 		}
-		$url.="://".$_SERVER['HTTP_HOST']."/_JMCKDS/Crypto-cronic/";
+		$url.="://".$_SERVER['HTTP_HOST']."/JMCKDS/HighGoats/";
 		return $url;  
 		 
 	}
