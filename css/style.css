@@ -987,6 +987,18 @@ footer .footerBlock > ul > li > a {
   margin: 0 auto;
 }
 
+.roadMapBgVideo {
+  position: relative !important;
+}
+.roadMapBgVideo::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .roadMapMain {
   padding: 20px 0;
   position: fixed;
@@ -1006,17 +1018,72 @@ footer .footerBlock > ul > li > a {
   height: 100%;
   background-size: contain;
   z-index: 998;
+  perspective: 1000px;
+  transition: all linear 0.5s;
+}
+.roadMapMain .roadMapBg .messageBox {
+  padding: 2rem;
+  position: absolute;
+  bottom: -100%;
+  right: 7%;
+  width: 500px;
+  min-height: 300px;
+  transform: rotateY(-20deg);
+  z-index: 99;
+  transition: all linear 0.5s;
+}
+.roadMapMain .roadMapBg .messageBox h4 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+.roadMapMain .roadMapBg .messageBox p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+.roadMapMain .roadMapBg .messageBox::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  background: #D9D9D9;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -100;
+}
+.roadMapMain .roadMapBg .messageBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #018040;
+  z-index: -99;
+  border-radius: 23px;
+}
+.roadMapMain .roadMapBg .messageBoxMove {
+  bottom: 30%;
+}
+.roadMapMain .slideLeft {
+  left: -100px;
 }
 .roadMapMain .mapMarkScroll {
-  border: 1px solid red;
   position: absolute;
   top: 0;
   width: 50%;
   left: 50%;
   transform: translateX(-50%);
   height: 100%;
-  transform-style: preserve-3d;
-  perspective: 1000px;
 }
 .roadMapMain .mapMarkScroll ul {
   position: absolute;
@@ -1026,7 +1093,6 @@ footer .footerBlock > ul > li > a {
   margin: 0;
   padding: 0;
   flex-flow: column;
-  border: 1px solid blue;
   transform: translateY(-50%);
   height: 95%;
   overflow: hidden;
@@ -1059,46 +1125,6 @@ footer .footerBlock > ul > li > a {
 }
 .roadMapMain .mapMarkScroll::-webkit-scrollbar {
   display: none;
-}
-.roadMapMain .mapMarkScroll .messageBox {
-  padding: 1rem;
-  background: #018040;
-  border-radius: 23px;
-  position: absolute;
-  bottom: 30%;
-  right: -50%;
-  width: 500px;
-  min-height: 300px;
-  transform: rotateY(-30deg);
-  z-index: 99;
-}
-.roadMapMain .mapMarkScroll .messageBox h4 {
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 48px;
-  display: flex;
-  align-items: center;
-  text-transform: capitalize;
-  color: #FFFFFF;
-}
-.roadMapMain .mapMarkScroll .messageBox p {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 36px;
-  display: flex;
-  align-items: center;
-  text-transform: capitalize;
-  color: #FFFFFF;
-}
-.roadMapMain .mapMarkScroll .messageBox::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 100%;
-  background: #D9D9D9;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1;
 }
 
 /*# sourceMappingURL=style.css.map */

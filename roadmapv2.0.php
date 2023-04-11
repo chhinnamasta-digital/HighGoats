@@ -5,6 +5,9 @@
 </head>
 <body>
     <?php require("assets/navbar.php"); ?>
+        <video autoplay muted loop id="ourPast_video" width='100%' class="roadMapBgVideo">
+            <source src="<?=$imgPath?>video/roadVideo.mp4" type="video/mp4">
+        </video>
     <section class="roadMapMain">
         <div class="container">
             <div class="row">
@@ -16,7 +19,7 @@
                                     $activeLi = "";
                                     for($i = 0; $i < 5; $i++){
                                         if($i === 0){
-                                            $activeLi = "active";
+                                            $activeLi = "";
                                         } 
                                         else{
                                             $activeLi = "";
@@ -27,12 +30,13 @@
                                         </li>";
                                     }
                                 ?>  
-                            </ul> 
-                            <div class='messageBox'>
+                            </ul>  
+                        </div>
+                        
+                        <div class='messageBox'>
                                 <h4>Community Code Audit</h4>
                                 <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
-                            </div>  
-                        </div>
+                            </div> 
                     </div>
                 </div>
             </div>
@@ -49,16 +53,21 @@
             $(".mapMarkScroll ul").scroll(function(){
                 $(setScale).each(function(index, values){
                     let elmLiOffset = $(values).offset().top;
-                    if(elmLiOffset <= halfHeightDiv + 50){ //find the center of Ul div when scroll 350px                 
-                            $(values).addClass("active").siblings().removeClass("active");                
+                    if(elmLiOffset <= halfHeightDiv){ //find the center of Ul div when scroll 350px                 
+                        $(values).addClass("active").siblings().removeClass("active");                
                     }
                 })
             })
 
             // OnClick icon
-            $(document).on("click", ".active>h2", function(){
-                $(document).find(".roadMapBg").animate({left: -100}, 500);
+            
+            let toggleClassFun = () =>{
+                $(document).find(".roadMapBg").toggleClass("slideLeft");
+                $(".messageBox").toggleClass("messageBoxMove");
+            }
 
+            $(document).on("click", ".active>h2", function(){
+                toggleClassFun();
             })
         })
     </script>
