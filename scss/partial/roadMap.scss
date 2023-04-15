@@ -74,7 +74,7 @@
 
 // Road Map Version 1.2
 .roadMapBgVideo{
-    position: relative !important;
+    // position: relative !important;
     &::after{
         content: "";
         width: 100%;
@@ -106,59 +106,7 @@
         // transform-style: preserve-3d;
         perspective: 1000px;
         transition: all linear 0.5s;
-        .messageBox{
-            padding: 2rem;          
-            position: absolute;
-            bottom: -100%;
-            right: 7%;
-            width: 500px;
-            min-height: 300px;
-            transform: rotateY(-20deg);
-            z-index: 99;
-            transition: all linear 0.5s;
-            h4{
-                font-weight: 600;
-                font-size: 32px;
-                line-height: 48px;
-                display: flex;
-                align-items: center;
-                text-transform: capitalize;
-                color: #FFFFFF;
-            }
-            p{
-                font-weight: 400;
-                font-size: 20px;
-                line-height: 36px;
-                display: flex;
-                align-items: center;
-                text-transform: capitalize;                        
-                color: #FFFFFF;
-            }
-            &::after{
-                content: '';
-                position: absolute;                
-                width: 30px;
-                height: 100%;
-                background: #D9D9D9;
-                left: 50%;
-                transform: translateX(-50%);
-                z-index: -100;
-            }
-            &::before{
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: #018040;
-                z-index: -99;
-                border-radius: 23px;  
-            }
-        } 
-        .messageBoxMove{
-            bottom: 30%;
-        }
+        
     }
     .slideLeft{
         left: -100px;
@@ -167,53 +115,75 @@
         // border: 1px solid red;
         position: absolute;        
         top: 0;
-        width: 50%;
+        width: 100%;
         left: 50%;
         transform: translateX(-50%);
         height: 100%;
-        // overflow-y: scroll;
+        overflow-y: scroll;
         ul{
             position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
+            top: 0%;
+            left: 50%;
+            width: fit-content;
             margin: 0;
             padding: 0;
             flex-flow: column;
+            transform: translateX(-50%);
             // border: 1px solid blue;
-            transform: translateY(-50%);
-            height: 95%;
-            overflow: hidden;
-            overflow-y: auto;
+            // transform: translateY(-50%);
+            // height: 95%;
+            // overflow: hidden;
+            // overflow-y: auto;
+            // height: 100%;
+            transition: all linear 0.5s;
             &::-webkit-scrollbar{
-                display: none;
+                // display: none;
             }
             li{
+                @for $i from 1 through 3{
+                    &:nth-of-type(#{$i}){
+                        // border: 1px solid red;
+                        // height: calc(100% / 3);
+                        height: 200px;
+                        img{
+                            transform: scale(calc($i / 2));
+                            transition: all linear 0.5s;
+                        }
+                    }
+                }
                 transition: all linear 0.5s;
-                // padding: 1rem 0;
+                padding: 1rem 0;
                 display: flex;
                 flex-flow: column;
-                justify-content: flex-end;
+                justify-content: center;
                 position: relative;
-                margin: 50% 0;
-                &:first-child{
+                width: fit-content;
+                margin: 0 auto;
+                &:first-child{ 
                     // top: 100px;
+                }
+                img{
+                    width: 50px;
+                    display: block;
+                    margin: 0 auto;
+                    cursor: pointer;
                 }
                 h2{
                     margin: 0 auto;
                     cursor: pointer;
-                    transition: all linear 0.5s;  
-                    transform: scale(0.5); 
-                    cursor: not-allowed;
+                    transition: all linear 0.5s; 
+                    // cursor: not-allowed;
                     width: fit-content;
+                    position: relative;
                 }
                  
                 &.active{
-                    h2{
-                        color:green; 
-                        transform: scale(1.2) ;
-                        cursor:pointer;
-                        cursor: pointer;
+                    img{
+                        transform: scale(2) ;
+                    }
+                    .messageBox{
+                        // display: block;
+                        // top: 0%;
                     }
                 }             
             }
@@ -222,4 +192,67 @@
             display: none;
         }        
     }
+}
+.messageBoxOutlet{
+    position: fixed;
+    perspective: 1000px;
+    width: 40%;
+    bottom: 0;
+    height: 60%;
+    right: 0%;
+    z-index: 999;
+}
+.messageBox{
+    padding: 2rem;          
+    position: absolute;
+    top: 0;
+    right: 0%;
+    width: 500px;
+    min-height: 300px;
+    transform: rotateY(-20deg);
+    z-index: 99;
+    transition: all linear 0.5s;
+    h4{
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 48px;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        color: #FFFFFF;
+    }
+    p{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 36px;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;                        
+        color: #FFFFFF;
+    }
+    &::after{
+        content: '';
+        position: absolute;                
+        width: 30px;
+        height: 100%;
+        background: #D9D9D9;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -100;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #018040;
+        z-index: -99;
+        border-radius: 23px;  
+    }
+} 
+.messageBoxMove{
+    bottom: 30%;
+    display: block;
 }

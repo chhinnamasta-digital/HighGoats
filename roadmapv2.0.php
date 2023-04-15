@@ -14,60 +14,87 @@
                 <div class="col-12">
                     <div class="roadMapBg">
                         <div class="mapMarkScroll">
-                            <ul>
-                                <?php
-                                    $activeLi = "";
-                                    for($i = 0; $i < 5; $i++){
-                                        if($i === 0){
-                                            $activeLi = "";
-                                        } 
-                                        else{
-                                            $activeLi = "";
-                                        }                                       
-                                            
-                                        echo"<li class='".$activeLi."'>
-                                            <h2 class='text-center'>".$i."</h2>                                            
-                                        </li>";
-                                    }
-                                ?>  
+                            <ul>            
+                                <li data-id="li-1">
+                                    <img src="images/roadmap/federal.png" alt="" class="img-fluid" />                                    
+                                    <!-- <div class='messageBox'>
+                                        <h4>Community Code Audit</h4>
+                                        <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
+                                    </div>                                            -->
+                                </li>           
+                                <li data-id="li-2">
+                                    <img src="images/roadmap/first-store.png" alt="" class="img-fluid" />                                    
+                                    <!-- <div class='messageBox'>
+                                        <h4>2</h4>
+                                        <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
+                                    </div>                                            -->
+                                </li>           
+                                <li class="active" data-id="li-3">
+                                    <img src="images/roadmap/formulation.png" alt="" class="img-fluid" />                                    
+                                    <!-- <div class='messageBox'>
+                                        <h4>C3</h4>
+                                        <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
+                                    </div>                                            -->
+                                </li>
                             </ul>  
-                        </div>
-                        
-                        <div class='messageBox'>
-                                <h4>Community Code Audit</h4>
-                                <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
-                            </div> 
+                        </div>                 
                     </div>
                 </div>
             </div>
         </div>
     </section>
+     
+    <div class="messageBoxOutlet">
+        <div class='messageBox' id="li-1">
+            <h4>1</h4>
+            <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
+        </div>  
+        <div class='messageBox' id="li-2">
+            <h4>2</h4>
+            <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
+        </div>  
+        <div class='messageBox' id="li-3">
+            <h4>3</h4>
+            <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
+        </div>  
+    </div>      
     <?php require("assets/footer.php"); ?>  
     
     <script>
         $(document).ready(function(){   
 
             let setScale = $(".mapMarkScroll>ul>li");
-            let halfHeightDiv = $(".mapMarkScroll ul").outerHeight() / 2; 
-
-            $(".mapMarkScroll ul").scroll(function(){
-                $(setScale).each(function(index, values){
-                    let elmLiOffset = $(values).offset().top;
-                    if(elmLiOffset <= halfHeightDiv){ //find the center of Ul div when scroll 350px                 
-                        $(values).addClass("active").siblings().removeClass("active");                
-                    }
-                })
-            })
-
-            // OnClick icon
-            
+            let halfHeightDiv = $(".mapMarkScroll ul").outerHeight(); 
+            console.warn("halfHeightDiv", halfHeightDiv);
+            let windowScreen = $(window).height();
+            let heightInPercentage = (halfHeightDiv / windowScreen) * 100;
+        
+            // OnClick icon            
             let toggleClassFun = () =>{
-                $(document).find(".roadMapBg").toggleClass("slideLeft");
-                $(".messageBox").toggleClass("messageBoxMove");
+                // $(document).find(".roadMapBg").toggleClass("slideLeft");
+                // $(".mapMarkScroll>ul>li.active> .messageBox").toggleClass("messageBoxMove");
             }
 
-            $(document).on("click", ".active>h2", function(){
-                toggleClassFun();
+            $(document).on("click", ".mapMarkScroll>ul>li", function(){
+
+                let offsetLi = $(this).offset().top;
+                let setMarginTop = halfHeightDiv - offsetLi; 
+                
+                $(this).addClass("active").siblings().removeClass("active");                
+                $(this).parents("ul").css({"margin-top":setMarginTop / 2 +"px"});
+                $(this).siblings().css({"margin-top":"0px"})
+                // if($(this).is('.active'))
+                let prevSibligs = $(this).prev().length;
+                // console.warn("prev siblings length", prevSibligs)
+
+                if(prevSibligs > 0){
+                    // $(this).prev().siblings().children("img").css({"transform":"scale(1)"})
+                    $(this).prev().children("img").addClass("imgScale");                
+                }
+                else{
+                    $(this).siblings().children("img").removeClass("imgScale");     
+                }
+
             })
         })
     </script>

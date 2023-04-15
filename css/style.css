@@ -987,9 +987,6 @@ footer .footerBlock > ul > li > a {
   margin: 0 auto;
 }
 
-.roadMapBgVideo {
-  position: relative !important;
-}
 .roadMapBgVideo::after {
   content: "";
   width: 100%;
@@ -1021,18 +1018,102 @@ footer .footerBlock > ul > li > a {
   perspective: 1000px;
   transition: all linear 0.5s;
 }
-.roadMapMain .roadMapBg .messageBox {
+.roadMapMain .slideLeft {
+  left: -100px;
+}
+.roadMapMain .mapMarkScroll {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  overflow-y: scroll;
+}
+.roadMapMain .mapMarkScroll ul {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  flex-flow: column;
+  transform: translateX(-50%);
+  transition: all linear 0.5s;
+}
+.roadMapMain .mapMarkScroll ul li {
+  transition: all linear 0.5s;
+  padding: 1rem 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+.roadMapMain .mapMarkScroll ul li:nth-of-type(1) {
+  height: 200px;
+}
+.roadMapMain .mapMarkScroll ul li:nth-of-type(1) img {
+  transform: scale(0.5);
+  transition: all linear 0.5s;
+}
+.roadMapMain .mapMarkScroll ul li:nth-of-type(2) {
+  height: 200px;
+}
+.roadMapMain .mapMarkScroll ul li:nth-of-type(2) img {
+  transform: scale(1);
+  transition: all linear 0.5s;
+}
+.roadMapMain .mapMarkScroll ul li:nth-of-type(3) {
+  height: 200px;
+}
+.roadMapMain .mapMarkScroll ul li:nth-of-type(3) img {
+  transform: scale(1.5);
+  transition: all linear 0.5s;
+}
+.roadMapMain .mapMarkScroll ul li img {
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.roadMapMain .mapMarkScroll ul li h2 {
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all linear 0.5s;
+  width: fit-content;
+  position: relative;
+}
+.roadMapMain .mapMarkScroll ul li.active img {
+  transform: scale(2);
+}
+.roadMapMain .mapMarkScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.messageBoxOutlet {
+  position: fixed;
+  perspective: 1000px;
+  width: 40%;
+  bottom: 0;
+  height: 60%;
+  right: 0%;
+  z-index: 999;
+}
+
+.messageBox {
   padding: 2rem;
   position: absolute;
-  bottom: -100%;
-  right: 7%;
+  top: 0;
+  right: 0%;
   width: 500px;
   min-height: 300px;
   transform: rotateY(-20deg);
   z-index: 99;
   transition: all linear 0.5s;
 }
-.roadMapMain .roadMapBg .messageBox h4 {
+.messageBox h4 {
   font-weight: 600;
   font-size: 32px;
   line-height: 48px;
@@ -1041,7 +1122,7 @@ footer .footerBlock > ul > li > a {
   text-transform: capitalize;
   color: #FFFFFF;
 }
-.roadMapMain .roadMapBg .messageBox p {
+.messageBox p {
   font-weight: 400;
   font-size: 20px;
   line-height: 36px;
@@ -1050,7 +1131,7 @@ footer .footerBlock > ul > li > a {
   text-transform: capitalize;
   color: #FFFFFF;
 }
-.roadMapMain .roadMapBg .messageBox::after {
+.messageBox::after {
   content: "";
   position: absolute;
   width: 30px;
@@ -1060,7 +1141,7 @@ footer .footerBlock > ul > li > a {
   transform: translateX(-50%);
   z-index: -100;
 }
-.roadMapMain .roadMapBg .messageBox::before {
+.messageBox::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1071,60 +1152,10 @@ footer .footerBlock > ul > li > a {
   z-index: -99;
   border-radius: 23px;
 }
-.roadMapMain .roadMapBg .messageBoxMove {
+
+.messageBoxMove {
   bottom: 30%;
-}
-.roadMapMain .slideLeft {
-  left: -100px;
-}
-.roadMapMain .mapMarkScroll {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
-}
-.roadMapMain .mapMarkScroll ul {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  flex-flow: column;
-  transform: translateY(-50%);
-  height: 95%;
-  overflow: hidden;
-  overflow-y: auto;
-}
-.roadMapMain .mapMarkScroll ul::-webkit-scrollbar {
-  display: none;
-}
-.roadMapMain .mapMarkScroll ul li {
-  transition: all linear 0.5s;
-  display: flex;
-  flex-flow: column;
-  justify-content: flex-end;
-  position: relative;
-  margin: 50% 0;
-}
-.roadMapMain .mapMarkScroll ul li h2 {
-  margin: 0 auto;
-  cursor: pointer;
-  transition: all linear 0.5s;
-  transform: scale(0.5);
-  cursor: not-allowed;
-  width: fit-content;
-}
-.roadMapMain .mapMarkScroll ul li.active h2 {
-  color: green;
-  transform: scale(1.2);
-  cursor: pointer;
-  cursor: pointer;
-}
-.roadMapMain .mapMarkScroll::-webkit-scrollbar {
-  display: none;
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
