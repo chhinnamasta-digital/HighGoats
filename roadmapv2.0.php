@@ -46,16 +46,19 @@
      
     <div class="messageBoxOutlet">
         <div class='messageBox' id="li-1">
-            <h4>1</h4>
+            <h4>Community Code Audit</h4>
             <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
+            <a class="buttons" href="">view details</a>
         </div>  
         <div class='messageBox' id="li-2">
-            <h4>2</h4>
-            <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
+            <h4>Digital Incorporation</h4>
+            <p>Formation of DAO and it’s associated duties, benefits.</p>
+            <a class="buttons" href="">view details</a>
         </div>  
-        <div class='messageBox' id="li-3">
-            <h4>3</h4>
+        <div class='messageBox' id="li-3">            
+            <h4>Community Code Audit</h4>
             <p>The greatest companies in the world are accountable to those who adore them. We hold ourselves to the standards expected of us by our ideological partners. </p>
+            <a class="buttons" href="">view details</a>
         </div>  
     </div>      
     <?php require("assets/footer.php"); ?>  
@@ -79,7 +82,10 @@
 
                 let offsetLi = $(this).offset().top;
                 let setMarginTop = halfHeightDiv - offsetLi; 
-                
+                let getDataLiAttr = $(this).attr("data-id");
+                $(document).find(".messageBoxOutlet #"+getDataLiAttr).addClass("active").siblings().removeClass("active");
+                // console.warn("getDataLiAttr", getDataId);
+
                 $(this).addClass("active").siblings().removeClass("active");                
                 $(this).parents("ul").css({"margin-top":setMarginTop / 2 +"px"});
                 $(this).siblings().css({"margin-top":"0px"})
@@ -95,6 +101,8 @@
                     $(this).siblings().children("img").removeClass("imgScale");     
                 }
 
+                // roadMapBg move left
+                // $(".roadMapBg").animate({left: "-20%"}, 100)
             })
         })
     </script>
